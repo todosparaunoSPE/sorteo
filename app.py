@@ -46,13 +46,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Cargar archivo de Excel en negro
-st.markdown(
-    """
-    <h2 style='color: black;'>Cargar el archivo de Excel con los nombres y folios</h2>
-    """,
-    unsafe_allow_html=True
-)
+
 
 # Cargar el archivo de Excel
 uploaded_file = st.file_uploader("Carga el archivo de Excel con los nombres y folios", type=["xlsx"])
