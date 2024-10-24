@@ -11,24 +11,6 @@ import random
 import time
 
 
-# Configurar el estilo de la página
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url('logo1.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-
-
-
 
 # Cargar la imagen
 logo = 'logo.jpg'  # Asegúrate de que el archivo logo.jpg esté en el mismo directorio que tu script
