@@ -21,6 +21,19 @@ try:
 except Exception as e:
     st.error(f"Error al cargar la imagen: {e}")
 
+
+page_bg_img = """
+<style>
+[data-testid="stAppViewContainer"]{
+background-color: #e5e5f7;
+opacity: 0.8;
+background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;    
+</sytle>
+"""
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
 # Título de la app
 st.title("Simulación de Sorteo por Folios")
 
