@@ -46,10 +46,19 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
+# Mostrar el texto en negro antes del cargador de archivos
+st.markdown(
+    """
+    <h2 style='color: black;'>Carga el archivo de Excel con los nombres y folios</h2>
+    """,
+    unsafe_allow_html=True
+)
 
 # Cargar el archivo de Excel
-uploaded_file = st.file_uploader("Carga el archivo de Excel con los nombres y folios", type=["xlsx"])
+#uploaded_file = st.file_uploader("Carga el archivo de Excel con los nombres y folios", type=["xlsx"])
+
+# Cargador de archivos
+uploaded_file = st.file_uploader("", type=["xlsx"])  # La etiqueta está vacía
 
 if uploaded_file is not None:
     # Leer el archivo de Excel
