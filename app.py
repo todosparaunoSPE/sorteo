@@ -35,17 +35,18 @@ if uploaded_file is not None:
         # Botón para iniciar el sorteo
         if st.button("Iniciar sorteo"):
             st.write("Iniciando sorteo...")
-            
+            folio_ganador = None  # Inicializar el folio ganador
+
             # Simular el "desfile" de folios
             for _ in range(50):  # Desfila 50 veces antes de elegir el ganador
                 folio_actual = random.choice(folios)  # Escoge un folio al azar en cada iteración
                 folio_display.markdown(f"### Folio: {folio_actual}")  # Actualiza dinámicamente el folio en pantalla
                 time.sleep(0.1)  # Controla la velocidad de la animación
+                folio_ganador = folio_actual  # Actualizar el folio ganador con el actual
             
-            # Elegir un ganador final
-            folio_ganador = random.choice(folios)
+            # Ahora, folio_ganador contendrá el último folio mostrado
             ganador = df[df['Folio'] == folio_ganador]  # Filtrar para obtener el nombre del ganador
-            nombre_ganador = ganador['Nombre'].values[0]
+            nombre_ganador = ganador['Nombre'].values[0] if not ganador.empty else "N/A"  # Manejo de caso vacío
             
             # Mostrar el ganador
             st.success(f"¡El ganador es: {nombre_ganador} con el folio {folio_ganador}!")
