@@ -35,7 +35,18 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 # Título de la app
-st.title("Simulación de Sorteo por Folios")
+#st.title("Simulación de Sorteo por Folios")
+
+
+# Título en rojo utilizando HTML
+st.markdown(
+    """
+    <h1 style='color: red;'>Simulación de Sorteo por Folios</h1>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 # Cargar el archivo de Excel
 uploaded_file = st.file_uploader("Carga el archivo de Excel con los nombres y folios", type=["xlsx"])
