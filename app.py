@@ -25,9 +25,13 @@ except Exception as e:
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
-background-color: #e5e5f7;
-opacity: 0.8;
-background: repeating-linear-gradient( -45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px );    
+background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
 </sytle>
 """
 
