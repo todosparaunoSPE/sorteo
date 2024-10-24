@@ -10,8 +10,6 @@ import pandas as pd
 import random
 import time
 
-
-
 # Cargar la imagen
 logo = 'logo.jpg'  # Asegúrate de que el archivo logo.jpg esté en el mismo directorio que tu script
 
@@ -21,7 +19,7 @@ try:
 except Exception as e:
     st.error(f"Error al cargar la imagen: {e}")
 
-
+# Estilo de fondo
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"]{
@@ -32,15 +30,10 @@ radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
 radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 background-color:#282828;
 background-size:16px 16px;
-</sytle>
+</style>
 """
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-
-
-# Título de la app
-#st.title("Simulación de Sorteo por Folios")
-
 
 # Título en rojo utilizando HTML
 st.markdown(
@@ -50,9 +43,24 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Sección de ayuda en la barra lateral
+st.sidebar.markdown(
+    """
+    ### Ayuda
+    Esta aplicación permite realizar un sorteo de folios a partir de un archivo de Excel que contenga una lista de nombres y sus correspondientes folios.
+    
+    **Pasos para utilizar la aplicación:**
+    1. **Carga el archivo de Excel:** Asegúrate de que el archivo contenga las columnas 'Nombre' y 'Folio'.
+    2. **Iniciar el sorteo:** Haz clic en el botón "Iniciar sorteo". La aplicación simulará un desfile de folios durante unos momentos.
+    3. **Ganador:** Al finalizar el sorteo, la aplicación mostrará el folio ganador junto con el nombre correspondiente.
+
+    Si el archivo no cumple con los requisitos, se mostrará un mensaje de error.
+    """,
+    unsafe_allow_html=True
+)
+
 # Cargar el archivo de Excel
 uploaded_file = st.file_uploader("Carga el archivo de Excel con los nombres y folios", type=["xlsx"])
-
 
 if uploaded_file is not None:
     # Leer el archivo de Excel
