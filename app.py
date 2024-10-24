@@ -10,6 +10,15 @@ import pandas as pd
 import random
 import time
 
+# Cargar la imagen
+logo = 'logo.jpg'  # Asegúrate de que el archivo logo.jpg esté en el mismo directorio que tu script
+
+# Mostrar la imagen con el tamaño deseado
+try:
+    st.image(logo, width=700)  # Ajusta el ancho según lo necesites
+except Exception as e:
+    st.error(f"Error al cargar la imagen: {e}")
+
 # Título de la app
 st.title("Simulación de Sorteo por Folios")
 
