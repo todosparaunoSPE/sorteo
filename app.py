@@ -45,7 +45,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 # Título en rojo utilizando HTML
 st.markdown(
     """
-    <h1 style='color: black;'>Simulación de Sorteo por Folios</h1>
+    <h1 style='color: white;'>Simulación de Sorteo por Folios</h1>
     """,
     unsafe_allow_html=True
 )
